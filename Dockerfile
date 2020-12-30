@@ -1,12 +1,12 @@
 FROM ubuntu:latest
 
-RUN add-apt-repository ppa:deadsnakes/ppa
+RUN apt update && apt install openssh-server sudo curl gcc g++ make software-properties-common -y
 
-RUN apt update && apt install openssh-server sudo curl gcc g++ make software-properties-common python3.7 -y
+RUN add-apt-repository ppa:deadsnakes/ppa
 
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 
-RUN apt update && apt install nodejs -y
+RUN apt update && apt install nodejs python3.7 -y
 
 RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 ubuntu 
 

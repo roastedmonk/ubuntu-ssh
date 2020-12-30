@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-RUN apt update && apt install openssh-server sudo curl gcc g++ git unzip make software-properties-common -y
+RUN apt update && apt install openssh-server sudo curl gcc g++ git zip unzip make software-properties-common -y
 
 RUN add-apt-repository ppa:deadsnakes/ppa
 

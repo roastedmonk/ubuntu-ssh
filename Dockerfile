@@ -1,5 +1,8 @@
 FROM ubuntu:latest
 
+ENV TZ=Asia/Kolkata
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 RUN apt update && apt install openssh-server sudo curl gcc g++ git zip unzip make wget software-properties-common -y
 
 RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | apt-key add -
